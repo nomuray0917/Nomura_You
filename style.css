@@ -188,3 +188,33 @@ body {
    -------------------- */
 .skills-grid {
     display: grid;}
+
+    .project-item {
+    /* 背景色を白、内側余白を確保 */
+    background-color: var(--color-background);
+    
+    /* ブロックを際立たせるためにボーダーを強化 */
+    border: 2px solid var(--color-border); 
+    
+    border-radius: 8px;
+    padding: 35px; /* やや内側の余白を増やす */
+    margin-bottom: 50px; /* ブロック間のマージンを増やす */
+    
+    /* シャドウを少しだけ目立たせる */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+    
+    /* ホバーで立体感を出す (オプション) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    /* ホバーでわずかに持ち上がる効果 */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-item h3 {
+    color: var(--color-primary);
+    font-size: 1.6rem; /* 少し大きく */
+    margin-bottom: 15px;
+}
