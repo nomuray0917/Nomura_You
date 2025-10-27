@@ -13,6 +13,13 @@
     <header class="header">
         <div class="container">
             <h1 class="site-logo">Nomura's HomePage</h1>
+
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <nav class="nav">
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -167,5 +174,40 @@
         </div>
     </footer>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const body = document.body;
+
+            // 1. ハンバーガーアイコンをクリックしたときの処理
+            menuToggle.addEventListener('click', () => {
+                body.classList.toggle('menu-open');
+                
+                // アクセシビリティ対応
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // 2. メニュー内のリンクをクリックしたときにメニューを閉じる処理
+            document.querySelectorAll('.nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (body.classList.contains('menu-open')) {
+                        body.classList.remove('menu-open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // 3. スムーススクロールの処理
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
