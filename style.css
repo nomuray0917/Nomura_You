@@ -28,17 +28,19 @@ body {
     --color-secondary: #333; /* 濃いグレー */
     --color-background: #FFF; /* 白 */
     --color-light-bg: #EAEAEA; /* 薄いグレー */
-    --color-accent: #666; /* アクセントカラーをグレーに変更 */
+    --color-accent: #666; /* アクセントカラー (濃いグレー) */
     --color-border: #D0D0D0; /* 薄いボーダー */
 }
 
-/* 共通ブロックカードスタイル */
+/* 共通ブロックカードスタイル (すべてのブロックに適用) */
 .block-card {
-    background-color: var(--color-background);
+    background-color: #FFF; /* 背景色を直接白に指定し、問題を回避 */
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 30px;
-    margin-bottom: 30px; 
+    /* 修正点: ブロック間の下側余白を増やす */
+    margin-bottom: 45px; 
+    
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -135,6 +137,7 @@ body {
 .section {
     padding: 80px 0;
     border-bottom: 1px solid var(--color-border);
+    /* ブロックが浮き立つように、セクションの背景をライトグレーに */
     background-color: var(--color-light-bg);
 }
 
@@ -160,7 +163,7 @@ body {
 .profile-section {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
 }
 
 .sub-title {
@@ -239,8 +242,10 @@ body {
     プロジェクト
    -------------------- */
 .project-item {
+    /* block-cardに加えて、さらに目立たせる */
     border: 2px solid var(--color-border);
-    margin-bottom: 50px;
+    /* 修正点: ブロック共通 (45px) よりさらに大きな余白を確保 */
+    margin-bottom: 70px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -296,12 +301,7 @@ body {
 /* --------------------
     コンタクトとビジョン
    -------------------- */
-.contact-intro {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
+/* contact-details に block-card が適用される */
 .contact-details {
     max-width: 600px;
     margin: 0 auto 50px auto;
@@ -359,26 +359,4 @@ body {
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-/* ----------------------------------
-   共通ブロックカードスタイル
-   ---------------------------------- */
-
-.block-card {
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 30px;
-    
-    /* 修正点: 下側の余白を30pxから45pxに増加 */
-    margin-bottom: 45px; 
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.block-card:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }

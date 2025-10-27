@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[あなたの名前] | Webデザイナー・技術者ポートフォリオ</title>
+    <title>Nomura | HomePage</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -12,13 +12,13 @@
 
     <header class="header">
         <div class="container">
-            <h1 class="site-logo">[あなたの名前]</h1>
+            <h1 class="site-logo">Nomura's HomePage</h1>
             <nav class="nav">
                 <ul>
-                    <li><a href="#about">アバウト</a></li>
-                    <li><a href="#skills">スキル</a></li>
-                    <li><a href="#projects">プロジェクト</a></li>
-                    <li><a href="#contact">コンタクト</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skill</a></li>
+                    <li><a href="#projects">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,40 +28,30 @@
         <section id="home" class="hero">
             <div class="container">
                 <p class="catchphrase"></p>
-                <h2 class="main-title">高専で培う技術とデザインの融合点を探る<br>個人の活動・制作実績サイト</h2>
-                <a href="#projects" class="hero-button">最新の制作実績を見る &darr;</a>
+                <h2 class="main-title">しがないバンドマンもどき<br>そんな人間のサイト</h2>
+                <a href="#projects" class="hero-button">見る &darr;</a>
             </div>
         </section>
 
         <section id="about" class="section about">
             <div class="container">
-                <h2 class="section-title">アバウト・ミー</h2>
+                <h2 class="section-title">About Me</h2>
                 
-                <div class="profile-section">
-                    <h3 class="sub-title">プロフィール</h3>
+                <div class="profile-section block-card">
+                    <h3 class="sub-title">Profile</h3>
                     <div class="profile-details">
-                        <p class="detail-item">**所属と学年 / 年齢**: [高専2年生 (17歳)]</p>
-                        <p class="detail-item">**主な目的**: Webデザイナーとしての就職・転職活動のためのポートフォリオ兼活動サイトです。</p>
+                        <p class="detail-item">所属:OMUCT 2-I</p>
+                        <p class="detail-item">主な目的:バンドだけではなく，個人としてのポートフォリオ兼活動サイトです.</p>
                     </div>
                 </div>
 
-                <div class="profile-section">
-                    <h3 class="sub-title">スキルと哲学</h3>
-                    <p class="pr-text">学校での授業や課外活動を通じて培った**Webデザインの構成力**と**プログラミングスキル**（Pythonなど）を活かし、ユーザーの課題を解決する論理的なデザインを提案します。音楽や開発の経験から、構造と効率性を重視するアプローチを強みとしています。</p>
-                </div>
-
-                <div class="profile-section hobbies-section">
+                <div class="profile-section hobbies-section block-card">
                     <h3 class="sub-title">ホビーと興味関心</h3>
                     <ul class="hobby-list">
                         <li>
-                            <span class="hobby-title">**バンド活動と音楽の構造分析**</span>
-                            <p class="hobby-detail">**内容**: バンド活動を行っており、楽曲の**作曲や構造分析**にも携わっています。</p>
-                            <p class="hobby-link">**技術への関連**: この趣味がコード進行ジェネレーターの開発やバンドのWebサイト制作に繋がりました。音楽の**構成**や**リズム感**を理解する力が、Webレイアウトの**構造**やアニメーションのタイミングに活かされています。</p>
-                        </li>
-                        <li>
-                            <span class="hobby-title">**[趣味のタイトル 2 例: 読書 / SF小説]**</span>
-                            <p class="hobby-detail">**内容**: [あなたの二つ目の趣味の具体的な内容]。</p>
-                            <p class="hobby-link">**技術への関連**: [それが技術やデザインにどう関連しているか]。</p>
+                            <span class="hobby-title">バンド活動と音楽の構造分析</span>
+                            <p class="hobby-detail">内容:バンド活動を行っており、楽曲の作詞作曲，ギターボーカルをしています．</p>
+                            <p class="hobby-link">技術への関連:この趣味がコード進行ジェネレーターの開発やバンドのWebサイト制作に繋がりました。音楽の**構成**や**リズム感**を理解する力が、Webレイアウトの**構造**やアニメーションのタイミングに活かされています。</p>
                         </li>
                     </ul>
                 </div>
@@ -72,17 +62,17 @@
             <div class="container">
                 <h2 class="section-title">スキルとツール</h2>
                 <div class="skills-grid">
-                    <div class="skill-category">
+                    <div class="skill-category block-card">
                         <h3>Webコーディングとデザイン</h3>
-                        <p>HTML5, CSS3, JavaScript (DOM操作基礎), レスポンシブデザイン, UI/UX原則, [使用デザインソフトウェア名]</p>
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category block-card">
                         <h3>言語と開発経験</h3>
-                        <p>Python (アルゴリズム/データ生成), Arduino言語, Scratch, Minecraft MOD開発言語 ([Java/Kotlin]), Git/GitHub (チーム・個人管理)</p>
+                        <p>Python,Arduino言語, Scratch,Java, Git/GitHub </p>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category block-card">
                         <h3>ツールと環境</h3>
-                        <p>VSCode (venv), WSL, ArduinoIDE, Deeds-DCS, MakeCode for micro:bit, Tinkercad, [その他ツール例: Ambient/Wiresharkなど]</p>
+                        <p>VSCode (venv), WSL, ArduinoIDE, Deeds-DCS, MakeCode for micro:bit, Tinkercad</p>
                     </div>
                     <p class="skills-note">**注**: 上記のスキルは、高専の授業および課外プロジェクトを通じて得た経験に基づいています。</p>
                 </div>
@@ -91,9 +81,9 @@
 
         <section id="projects" class="section projects">
             <div class="container">
-                <h2 class="section-title">プロジェクト</h2>
+                <h2 class="section-title">Projects</h2>
                 
-                <article class="project-item">
+                <article class="project-item block-card">
                     <h3>carrel bites 公式Webサイト デザイン・開発</h3>
                     <div class="project-meta">
                         <span class="tag">Webデザイン</span>
@@ -105,13 +95,14 @@
                         <div class="project-image-gallery">
                             [画像1: PC版トップ画面] [画像2: モバイル版メニュー画面] [画像3: ディスコグラフィページ抜粋]
                         </div>
-                        <p>**概要:** 自身の所属するバンドの公式ホームページとして、情報発信とブランディングを目的に制作・運用。ライブ情報、ディスコグラフィ、お問い合わせなど、運用に必要な全ページを設計・実装しました。</p>
-                        <p>**技術的アプローチ:** **モノトーン**を基調とし、バンドのコンセプトに合わせたクールでシンプルなUI/UXを設計。HTML/CSS/JSでフルスクラッチでコーディングし、レスポンシブデザインに対応させ、GitHub Pagesにて公開しています。</p>
+                        <p>概要:自身の所属するバンドの公式ホームページとして、情報発信とブランディングを目的に制作・運用。ライブ情報、ディスコグラフィ、お問い合わせなど、運用に必要な全ページを設計・実装しました。</p>
+                        <p>技術的アプローチ:モノトーンを基調とし、バンドのコンセプトに合わせたクールでシンプルなUI/UXを設計。HTML/CSS/JSでフルスクラッチでコーディングし、レスポンシブデザインに対応させ、GitHub Pagesにて公開しています。</p>
+                        <p>制作理由:バンドのwebサイトを作るだけで月何千円も取られたり，無料版で広告を入れられるのがムカついたため．</p> 
                         <a href="https://nomuray0917.github.io/carrelbites/index.html" target="_blank" class="link-button">Webサイトリンク ➡️</a>
                     </div>
                 </article>
                 
-                <article class="project-item">
+                <article class="project-item block-card">
                     <h3>スーパー神神コード進行ジェネレータ (3和音ver)</h3>
                     <div class="project-meta">
                         <span class="tag">Python</span>
@@ -129,7 +120,7 @@
                     </div>
                 </article>
 
-                <article class="project-item">
+                <article class="project-item block-card">
                     <h3>Minecraft MOD (CaffeineMOD) 開発とプロモーションWebサイト制作</h3>
                     <div class="project-meta">
                         <span class="tag">チーム開発</span>
@@ -156,15 +147,15 @@
 
         <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title">コンタクトとビジョン</h2>
-                <p class="contact-intro">技術的なフィードバック、共同開発のご提案、採用に関するご連絡など、お気軽にお問い合わせください。</p>
-                <div class="contact-details">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-intro">バンドではなく，僕個人へのご連絡など、お気軽にお問い合わせください。</p>
+                <div class="contact-details block-card">
                     <p>**GitHub:** <a href="[あなたの GitHub URL]" target="_blank" class="accent-link">[あなたの GitHub ID]</a></p>
                     <p>**Email:** <a href="mailto:[あなたのメールアドレス]" class="accent-link">[あなたのメールアドレス]</a></p>
                 </div>
                 
                 <h3 class="vision-title">今後のビジョン</h3>
-                <p class="vision-text">将来的には、Webフロントエンド技術（JavaScriptフレームワークなど）とバックエンド技術を連携させたフルスタック開発に挑戦したいと考えています。常に新しい技術に触れ、Web制作の可能性を広げていきます。</p>
+                <p class="vision-text">将来的には，音楽ができる何でも屋になりたいと思っています．</p>
             </div>
         </section>
 
