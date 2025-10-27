@@ -164,10 +164,12 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 /* --------------------
     レスポンシブデザイン (PC表示用)
    -------------------- */
+/* ====================
+    レスポンシブデザイン (PC表示用)
+   ==================== */
 @media (min-width: 768px) {
     /* --------------------
        ヘッダーのレイアウトとハンバーガーメニューの解除 (PC向け)
-       ★PC表示のヘッダー崩れを完全に修正するブレイクポイント★
        -------------------- */
     
     .menu-toggle {
@@ -175,7 +177,7 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     }
     
     .nav {
-        /* 全画面表示の解除と通常状態へのリセット */
+        /* 全画面表示を解除し、通常の位置に戻す */
         position: static; 
         height: auto;
         opacity: 1;
@@ -183,22 +185,26 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
         padding-top: 0;
         background: none;
         transition: none;
-        /* PCヘッダー内の配置をフレックスで制御 */
-        display: block; 
+        display: block; /* ナビゲーション全体をブロック要素として扱う */
         width: auto;
     }
     
+    /* ★修正点: ナビゲーションのリスト (UL) にフレックスを適用し、横積み (row) にする */
     .nav ul {
-        flex-direction: row; /* 横並びに戻す */
-        justify-content: flex-end;
+        display: flex; /* リストアイテムを横に並べる */
+        flex-direction: row; 
+        justify-content: flex-end; /* 右端に寄せる */
         align-items: center;
-        margin-left: auto; /* ナビを右端に寄せる */
+        margin-left: auto; 
     }
     
     .nav li {
         border-bottom: none;
         margin-left: 20px;
         width: auto;
+        /* モバイル用の縦積みマージンを解除 */
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .nav a {
