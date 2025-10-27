@@ -1,4 +1,4 @@
-/* CSS Reset (Simplified) */
+/* CSS リセット (簡易版) */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    color: #333;
-    background-color: #F5F5F5;
+    color: #333; /* 濃いグレー */
+    background-color: #F8F8F8; /* ほぼ白の背景 */
     line-height: 1.6;
 }
 
@@ -18,18 +18,18 @@ body {
     padding: 0 20px;
 }
 
-/* Monotone Color Scheme Definition */
+/* モノトーンのカラースキーム定義 */
 :root {
-    --color-primary: #000;
-    --color-secondary: #333;
-    --color-background: #FFF;
-    --color-light-bg: #EAEAEA;
-    --color-accent: #00BCD4; /* Cyan Accent Color */
-    --color-border: #E0E0E0;
+    --color-primary: #000; /* 黒 */
+    --color-secondary: #333; /* 濃いグレー */
+    --color-background: #FFF; /* 白 */
+    --color-light-bg: #EAEAEA; /* 薄いグレー */
+    --color-accent: #666; /* アクセントカラーをグレーに変更 */
+    --color-border: #D0D0D0; /* 薄いボーダー */
 }
 
 /* --------------------
-    HEADER & NAVIGATION
+    ヘッダーとナビゲーション
    -------------------- */
 .header {
     background-color: var(--color-background);
@@ -69,25 +69,22 @@ body {
 }
 
 .nav a:hover {
-    color: var(--color-accent);
+    color: var(--color-accent); /* ホバーで濃いグレー */
 }
 
 /* --------------------
-    HERO SECTION (HOME)
+    ヒーローセクション (HOME)
    -------------------- */
 .hero {
-    background-color: var(--color-primary);
-    color: var(--color-background);
+    background-color: var(--color-primary); /* 背景を黒 */
+    color: var(--color-background); /* 文字を白 */
     padding: 120px 0;
     text-align: center;
 }
 
+/* キャッチコピーを非表示 */
 .catchphrase {
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    color: var(--color-accent);
-    margin-bottom: 15px;
-    font-family: 'Roboto Mono', monospace;
+    display: none;
 }
 
 .main-title {
@@ -101,8 +98,8 @@ body {
     display: inline-block;
     margin-top: 40px;
     padding: 12px 30px;
-    background-color: var(--color-accent);
-    color: var(--color-primary);
+    background-color: var(--color-accent); /* 濃いグレーのボタン */
+    color: var(--color-background); /* 白文字 */
     text-decoration: none;
     font-weight: 700;
     border-radius: 4px;
@@ -110,11 +107,11 @@ body {
 }
 
 .hero-button:hover {
-    background-color: #0097A7;
+    background-color: #444; /* やや濃く */
 }
 
 /* --------------------
-    SECTION COMMON
+    セクション共通スタイル
    -------------------- */
 .section {
     padding: 80px 0;
@@ -133,12 +130,12 @@ body {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent); /* アクセントもグレー */
     margin: 10px auto 0;
 }
 
 /* --------------------
-    ABOUT ME
+    アバウト・ミー
    -------------------- */
 .profile-section {
     margin-bottom: 50px;
@@ -149,7 +146,7 @@ body {
 .sub-title {
     font-size: 1.3rem;
     color: var(--color-primary);
-    border-left: 5px solid var(--color-accent);
+    border-left: 5px solid var(--color-accent); /* アクセントもグレー */
     padding-left: 10px;
     margin-bottom: 20px;
 }
@@ -187,153 +184,7 @@ body {
 }
 
 /* --------------------
-    SKILLS
+    スキル
    -------------------- */
 .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-.skill-category {
-    background-color: var(--color-background);
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-}
-
-.skill-category h3 {
-    color: var(--color-accent);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.skill-category p {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.95rem;
-}
-
-.skills-note {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* --------------------
-    PROJECTS & ACTIVITIES
-   -------------------- */
-.project-item, .activity-item {
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.project-item h3, .activity-item h3 {
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.tag {
-    display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-background);
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-}
-
-.project-image-gallery, .activity-image-gallery {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
-    min-height: 180px; 
-    background-color: var(--color-light-bg);
-    border-radius: 4px;
-    text-align: center;
-    color: var(--color-secondary);
-    font-size: 0.9rem;
-    overflow-x: auto;
-    padding: 15px;
-}
-
-.link-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: var(--color-secondary);
-    color: var(--color-background);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.link-button:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-}
-
-/* --------------------
-    CONTACT & VISION
-   -------------------- */
-.contact-intro {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.contact-details {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.contact-details p {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-.accent-link {
-    color: var(--color-accent);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--color-accent);
-    font-family: 'Roboto Mono', monospace;
-}
-
-.accent-link:hover {
-    color: var(--color-secondary);
-    border-bottom: 1px solid var(--color-secondary);
-}
-
-.vision-title {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-.vision-text {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    color: var(--color-secondary);
-    line-height: 1.8;
-}
-
-/* ====================
-    RESPONSIVE DESIGN
-   ==================== */
-@media (min-width: 768px) {
-    /* SKILLS Grid Layout */
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+    display: grid;}
