@@ -1,5 +1,5 @@
 /* ====================
-   モノトーン・ブロック化CSS (ルート配置対応版)
+   モノトーン・ブロック化CSS (最終修正版)
    ==================== */
 
 /* CSS リセット (簡易版) */
@@ -38,8 +38,7 @@ body {
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 30px;
-    /* ブロック間の下側余白 */
-    margin-bottom: 45px; 
+    margin-bottom: 45px; /* ブロック間の下側余白 */
     
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -63,22 +62,26 @@ body {
 }
 
 .header .container {
-    /* モバイルでの位置調整 */
+    /* モバイル・PC共通のフレックス設定 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; 
+    position: relative;
+    /* 高さの問題を解消するため、明示的な高さ指定は避け、コンテンツに合わせる */
+    height: auto; 
 }
 
 .site-logo {
     font-size: 1.5rem;
     color: var(--color-primary);
     font-family: 'Roboto Mono', monospace;
+    /* モバイルでのボタンとの重なりを防ぐため、z-indexを設定 */
+    z-index: 200; 
 }
 
 /* ハンバーガーアイコンのスタイル */
 .menu-toggle {
-    display: block; /* デフォルトで表示 */
+    display: block; /* モバイルで表示 */
     width: 30px;
     height: 30px;
     background: none;
@@ -114,7 +117,7 @@ body {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 150;
-    padding-top: 80px; 
+    padding-top: 80px; /* ヘッダーの高さ分、コンテンツを下にずらす */
     box-sizing: border-box;
 }
 
@@ -159,32 +162,37 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 
 
 /* --------------------
-    レスポンシブ対応 (デスクトップ版へ戻す)
-   -------------------- */
-/* ====================
     レスポンシブデザイン (PC表示用)
-   ==================== */
+   -------------------- */
 @media (min-width: 768px) {
     /* --------------------
-       ハンバーガーメニューの解除
+       ヘッダーのレイアウトとハンバーガーメニューの解除 (PC向け)
+       ★PC表示のヘッダー崩れを完全に修正するブレイクポイント★
        -------------------- */
+    
     .menu-toggle {
         display: none; /* デスクトップではボタンを非表示 */
     }
     
     .nav {
-        /* 全画面表示を解除し、通常の位置に戻す */
+        /* 全画面表示の解除と通常状態へのリセット */
         position: static; 
         height: auto;
-        opacity: 1; /* 非表示状態を解除 */
-        visibility: visible; /* クリック不可状態を解除 */
+        opacity: 1;
+        visibility: visible;
         padding-top: 0;
         background: none;
+        transition: none;
+        /* PCヘッダー内の配置をフレックスで制御 */
+        display: block; 
+        width: auto;
     }
     
     .nav ul {
         flex-direction: row; /* 横並びに戻す */
         justify-content: flex-end;
+        align-items: center;
+        margin-left: auto; /* ナビを右端に寄せる */
     }
     
     .nav li {
@@ -194,7 +202,7 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     }
 
     .nav a {
-        color: var(--color-secondary); /* 濃いグレーの文字に戻す */
+        color: var(--color-secondary);
         font-size: 1rem;
         padding: 0;
     }
@@ -235,7 +243,6 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     background-color: var(--color-accent);
     color: var(--color-background);
     text-decoration: none;
-    font-weight: 700;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
@@ -354,7 +361,6 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     プロジェクト
    -------------------- */
 .project-item {
-    /* block-cardに加えて、さらに目立たせる */
     border: 2px solid var(--color-border);
     margin-bottom: 70px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -412,7 +418,6 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 /* --------------------
     コンタクトとビジョン
    -------------------- */
-/* contact-details に block-card が適用される */
 .contact-details {
     max-width: 600px;
     margin: 0 auto 50px auto;
