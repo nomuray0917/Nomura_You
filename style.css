@@ -606,3 +606,56 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     from {transform: scale(0)} 
     to {transform: scale(1)}
 }
+
+/* --------------------
+    経歴セクション (タイムライン)
+   -------------------- */
+.history-timeline {
+    position: relative;
+    padding: 10px 0 10px 20px; /* 左側にスペースを確保 */
+}
+
+/* タイムラインの垂直線 */
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--color-light-bg); /* 薄いグレーの線 */
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* タイムラインの丸い点 (時間軸の目印) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 5px; /* 上の位置を調整 */
+    left: -6px; /* 垂直線の位置に合わせる */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary); /* 黒い点 */
+    border: 3px solid var(--color-background); /* 白い枠線 */
+    z-index: 5;
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 700;
+    color: var(--color-accent); /* 濃いグレーの強調色 */
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.timeline-detail {
+    margin: 0;
+    color: var(--color-secondary);
+    font-size: 1rem;
+}
