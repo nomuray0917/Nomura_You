@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>認証ページ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 認証フォーム専用のシンプルなスタイル */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--color-light-bg, #F8F8F8); /* メインサイトの背景色 */
+        }
+        .auth-container {
+            background-color: var(--color-background, #FFF);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        .auth-container h2 {
+            margin-bottom: 20px;
+            color: var(--color-primary, #000);
+        }
+        .auth-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--color-border, #D0D0D0);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .auth-container button {
+            background-color: var(--color-accent, #666);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .auth-container button:hover {
+            background-color: var(--color-secondary, #333);
+        }
+        #message {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>合言葉を入力してください</h2>
+        <input type="password" id="passphrase" placeholder="合言葉">
+        <button onclick="checkPassphrase()">認証</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkPassphrase() {
+            const input = document.getElementById('passphrase').value.trim();
+            const message = document.getElementById('message');
+            
+            // 合言葉と遷移先の定義
+            const passphrases = {
+                "music": "1st_bonus.html", // 今回の合言葉
+                //"webdev": "2nd_bonus.html", 
+            };
+            
+            const targetPage = passphrases[input];
+
+            if (targetPage) {
+                // 認証成功！
+                message.textContent = "認証成功！ページに移動します...";
+                
+                // ★修正点: リダイレクト先のURLに認証キー '?key=secure' を付与★
+                const authorizedUrl = targetPage + '?key=secure';
+                
+                window.location.href = authorizedUrl; 
+            } else {
+                message.textContent = "合言葉が違います。";
+                document.getElementById('passphrase').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

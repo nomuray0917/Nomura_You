@@ -52,9 +52,6 @@ body {
 /* --------------------
     ヘッダーとナビゲーション
    -------------------- */
-/* --------------------
-    ヘッダーとナビゲーション
-   -------------------- */
 .header {
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);
@@ -65,7 +62,6 @@ body {
 }
 
 .header .container {
-    /* 修正点: 垂直方向の中央揃えを維持 */
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -89,7 +85,6 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    /* 修正点: position: absolute を使って右上に固定 */
     position: absolute;
     top: 50%;
     right: 20px;
@@ -106,23 +101,22 @@ body {
     transition: all 0.3s ease;
     border-radius: 2px;
 }
-/* ... (ナビゲーションメニューのスタイルはそのまま) ... */
 
 /* モバイル表示時のナビゲーションメニューのスタイル */
 .nav {
     position: absolute; 
-    top: 100%;
+    top: 100%; 
     left: 0;
     width: 100%;
     height: auto; 
     max-height: 0; 
     
-    background-color: var(--color-primary); /* 黒背景 */
+    background-color: var(--color-primary); 
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
     
-    transition: max-height 0.3s ease-out, opacity 0.3s ease;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease; 
     z-index: 90;
     padding: 0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -130,7 +124,6 @@ body {
 
 .nav ul {
     flex-direction: column; 
-    /* 修正点: 縦積みなので align-items: center は継続 */
     align-items: center; 
     width: 100%;
     padding: 10px 0;
@@ -139,22 +132,36 @@ body {
 
 .nav li {
     margin: 15px 0;
-    /* 修正点: リストアイテムの幅を広げ、次の行の text-align: center; を機能させる */
-    width: 100%; /* 幅を100%に広げる */ 
-    text-align: center; /* これで li 内のコンテンツが中央揃えされる */
+    /* 修正点: リンクが中央に来るよう、幅を調整 */
+    width: 100%; 
+    text-align: center; 
     border-bottom: 1px solid var(--color-secondary);
 }
 
 .nav a {
-    color: var(--color-background);
+    color: var(--color-background); 
     font-size: 1.2rem;
     padding: 10px 0;
     display: block;
 }
 
+/* 隠しリンクの初期設定（モバイルで非表示） */
+.hidden-pc-link {
+    display: none; 
+}
+
+.hidden-pc-link a {
+    color: var(--color-background) !important;
+    font-weight: 700;
+}
+
+.hidden-pc-link a:hover {
+    color: var(--color-light-bg) !important;
+}
+
 /* メニューが開いたとき (JSで body に .menu-open クラスを追加) */
 body.menu-open .nav {
-    max-height: 500px; /* メニューが表示される十分な高さ */
+    max-height: 500px;
     opacity: 1;
     visibility: visible;
 }
@@ -176,11 +183,11 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
    -------------------- */
 @media (min-width: 768px) {
     /* --------------------
-       ヘッダーの横積み修正
+       ヘッダーの横積み修正と隠しリンクの表示
        -------------------- */
     
     .menu-toggle {
-        display: none; /* PCではボタンを非表示 */
+        display: none;
     }
     
     .nav {
@@ -199,7 +206,7 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     }
     
     .nav ul {
-        display: flex; /* ★PC横並びを確実に適用★ */
+        display: flex; /* PC横並びを確実に適用 */
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
@@ -219,6 +226,17 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
         font-size: 1rem;
         padding: 0;
     }
+    
+    /* 隠しリンクの表示 (PCでのみ) */
+    .hidden-pc-link {
+        display: block;
+        margin-left: 20px;
+    }
+    
+    .hidden-pc-link a {
+        /* PCでは白文字に上書き */
+        color: var(--color-background) !important;
+    }
 
     /* --------------------
        スキル グリッドレイアウト
@@ -234,16 +252,11 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 .hero {
     background-color: var(--color-primary);
     color: var(--color-background);
-    
-    /* 修正点: 画面の高さいっぱいに設定 */
     height: 100vh; 
-    
-    /* 修正点: コンテンツを垂直方向の中央に配置 */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    padding: 0; /* 既存のpaddingをリセット */
+    padding: 0; 
     text-align: center;
 }
 
@@ -255,12 +268,20 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #CCC;
+    max-width: 600px;
+    margin: 0 auto 30px auto; 
+    line-height: 1.6;
 }
 
 .hero-button {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 12px 30px;
     background-color: var(--color-accent);
     color: var(--color-background);
@@ -273,18 +294,6 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     background-color: #444;
 }
 
-/* --------------------
-    レスポンシブデザイン (PC表示用)
-   -------------------- */
-@media (min-width: 768px) {
-    /* PC表示で文字サイズを少し大きくする（オプション） */
-    .hero {
-        padding: 0; 
-    }
-    .main-title {
-        font-size: 3.5rem;
-    }
-}
 /* --------------------
     セクション共通スタイル
    -------------------- */
@@ -332,6 +341,55 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     line-height: 1.8;
 }
 
+/* 経歴セクションのデザイン */
+.history-timeline {
+    position: relative;
+    padding: 10px 0 10px 20px;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--color-light-bg);
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 5px; 
+    left: -6px; 
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid var(--color-background);
+    z-index: 5;
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.timeline-detail {
+    margin: 0;
+    color: var(--color-secondary);
+    font-size: 1rem;
+}
+
 .hobby-list {
     list-style: none;
     padding: 0;
@@ -359,35 +417,24 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     color: var(--color-accent);
 }
 
-
 /* --------------------
-    サブセクションタイトル (SKILLSセクション内)
+    スキル
    -------------------- */
 .sub-section-title {
     font-size: 1.6rem;
     color: var(--color-primary);
-    margin: 40px 0 25px 0; /* 上部に大きな余白を空ける */
+    margin: 40px 0 25px 0;
     padding-left: 5px;
-    border-left: 3px solid var(--color-accent); /* シンプルな強調 */
+    border-left: 3px solid var(--color-accent);
 }
 
-/* ツールセクションのグリッド上部にマージンを追加 (オプション) */
-.tools-grid {
-    margin-top: 30px; 
-}
-
-/* --------------------
-    スキル (カードデザイン)
-   -------------------- */
 .skills-grid {
-    /* 修正点: PCでは3列、モバイルでは1列のグリッドにする */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* カード間の間隔 */
+    gap: 20px;
 }
 
 .skill-card {
-    /* skill-card にはすでに .block-card が適用されている */
     padding: 20px;
 }
 
@@ -399,7 +446,7 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 
 .skill-period {
     display: block;
-    color: var(--color-accent); /* 濃いグレーで期間を強調 */
+    color: var(--color-accent);
     font-size: 0.85rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -412,10 +459,11 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 
 .skills-note {
     text-align: center;
-    margin-top: 60px; /* 上部に大きな余白 */
+    margin-top: 60px;
     font-size: 0.9rem;
     color: #666;
 }
+
 /* --------------------
     プロジェクト
    -------------------- */
@@ -448,7 +496,7 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     align-items: center;
     gap: 15px;
     margin: 20px 0;
-    min-height: 180px; 
+    min-height: auto; 
     background-color: var(--color-light-bg);
     border-radius: 4px;
     text-align: center;
@@ -457,6 +505,19 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     overflow-x: auto;
     padding: 15px;
 }
+
+.project-image-gallery img {
+    max-width: 100%;
+    max-height: 180px; 
+    width: auto; 
+    object-fit: contain; 
+    
+    display: block; 
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer; 
+}
+
 
 .link-button {
     display: inline-block;
@@ -531,177 +592,4 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     color: var(--color-background);
     text-align: center;
     padding: 20px 0;
-}
-
-/* プロジェクトセクションの画像に対する基本的なスタイル */
-.project-image-gallery img {
-    /* 画像が親要素からはみ出さないように最大幅を設定 */
-    max-width: 100%; 
-    /* 画像の高さを自動調整 */
-    height: auto; 
-    /* ギャラリー内の各画像を小さなブロックとして表示 */
-    display: block; 
-    /* 角を丸くする */
-    border-radius: 4px;
-    /* ギャラリー内の余白 */
-    margin: 5px;
-    
-    /* 複数の画像が横に並ぶように、最大幅を調整しても良い */
-    /* max-width: 30%; */ 
-}
-
-/* 画像が入ったら、プレースホルダー用のmin-heightは不要になるので、CSSで削除できます */
-.project-image-gallery {
-    /* min-height: 180px;  この行を削除またはコメントアウト */
-    min-height: auto;
-}
-
-/* プロジェクトセクションの画像に対するサムネイルスタイル */
-.project-image-gallery img {
-    max-width: 100%;
-    /* 修正点: 縦幅を強制的に制限する */
-    max-height: 180px; /* 例として180pxに制限 */
-    width: auto; /* 幅はアスペクト比を維持して自動調整 */
-    object-fit: contain; /* 画像全体が表示されるように調整 */
-    
-    display: block; 
-    border-radius: 4px;
-    margin: 5px;
-    cursor: pointer; /* クリック可能であることを示す */
-    
-    /* 複数の画像が横に並ぶように、最大幅を調整しても良い */
-    /* max-width: 30%; */ 
-}
-
-/* プレースホルダー用の min-height を解除/削除 */
-.project-image-gallery {
-    min-height: auto;
-}
-
-/* モーダルウィンドウのコンテナ全体 */
-.modal {
-    display: none; /* 初期状態では非表示 */
-    position: fixed;
-    z-index: 1000; /* 他の要素より手前に表示 */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.9); /* 半透明の黒背景 */
-}
-
-/* 拡大表示される画像本体 */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 90%;
-    max-width: 900px;
-    /* 垂直方向の中央配置 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* 画像の説明文 (キャプション) */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-/* 閉じるボタン */
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* モーダル表示時のアニメーション (オプション) */
-.modal-content, #caption {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-
-@keyframes zoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-
-/* --------------------
-    経歴セクション (タイムライン)
-   -------------------- */
-.history-timeline {
-    position: relative;
-    padding: 10px 0 10px 20px; /* 左側にスペースを確保 */
-}
-
-/* タイムラインの垂直線 */
-.history-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--color-light-bg); /* 薄いグレーの線 */
-}
-
-.timeline-item {
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 20px;
-}
-
-/* タイムラインの丸い点 (時間軸の目印) */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 5px; /* 上の位置を調整 */
-    left: -6px; /* 垂直線の位置に合わせる */
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--color-primary); /* 黒い点 */
-    border: 3px solid var(--color-background); /* 白い枠線 */
-    z-index: 5;
-}
-
-.timeline-date {
-    display: block;
-    font-weight: 700;
-    color: var(--color-accent); /* 濃いグレーの強調色 */
-    margin-bottom: 5px;
-    font-size: 0.95rem;
-}
-
-.timeline-detail {
-    margin: 0;
-    color: var(--color-secondary);
-    font-size: 1rem;
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自分が夜の主人公になったら デモ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. 現在のページのURLからクエリパラメータ（URLの「?」以降の部分）を取得
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // 2. 'key' という名前のパラメータの値が 'secure' であるかチェック
+        //    (例: URLが 1st_bonus.html?key=secure の場合に認証済みとみなす)
+        const isAuthorized = urlParams.get('key') === 'secure';
+
+        // 3. 認証されていない場合、トップページにリダイレクト
+        if (!isAuthorized) {
+            alert('不正なアクセスです。トップページに戻ります。'); // ユーザーに警告
+            window.location.replace('index.html'); // トップページにリダイレクト（履歴を残さない）
+        }
+    });
+</script>
+<body class="section">
+    <div class="container" style="text-align: center; padding: 100px 0;">
+    <h1>ボーナスページへようこそ</h1>
+    
+    <p style="margin: 20px 0;">このページに来れた君はオタクです．</p>
+    
+    <div class="audio-player-container" style="margin: 30px auto; max-width: 400px;">
+        <h3 style="margin-bottom: 15px;">デモトラック：自分が夜の主人公になったら</h3>
+        
+        <audio controls>
+            <source src="audio/Inst_1.mp3" type="audio/mpeg">
+            お使いのブラウザは音声ファイルをサポートしていません。
+        </audio>
+    </div>
+    
+    <p style="margin-top: 30px;"><a href="index.html" class="hero-button">メインサイトに戻る</a></p>
+</div>
+</body>
+</html>
