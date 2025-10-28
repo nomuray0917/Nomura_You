@@ -234,7 +234,16 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
 .hero {
     background-color: var(--color-primary);
     color: var(--color-background);
-    padding: 120px 0;
+    
+    /* 修正点: 画面の高さいっぱいに設定 */
+    height: 100vh; 
+    
+    /* 修正点: コンテンツを垂直方向の中央に配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 0; /* 既存のpaddingをリセット */
     text-align: center;
 }
 
@@ -264,6 +273,18 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     background-color: #444;
 }
 
+/* --------------------
+    レスポンシブデザイン (PC表示用)
+   -------------------- */
+@media (min-width: 768px) {
+    /* PC表示で文字サイズを少し大きくする（オプション） */
+    .hero {
+        padding: 0; 
+    }
+    .main-title {
+        font-size: 3.5rem;
+    }
+}
 /* --------------------
     セクション共通スタイル
    -------------------- */
@@ -338,38 +359,63 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     color: var(--color-accent);
 }
 
+
 /* --------------------
-    スキル
+    サブセクションタイトル (SKILLSセクション内)
+   -------------------- */
+.sub-section-title {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin: 40px 0 25px 0; /* 上部に大きな余白を空ける */
+    padding-left: 5px;
+    border-left: 3px solid var(--color-accent); /* シンプルな強調 */
+}
+
+/* ツールセクションのグリッド上部にマージンを追加 (オプション) */
+.tools-grid {
+    margin-top: 30px; 
+}
+
+/* --------------------
+    スキル (カードデザイン)
    -------------------- */
 .skills-grid {
+    /* 修正点: PCでは3列、モバイルでは1列のグリッドにする */
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* カード間の間隔 */
 }
 
-.skill-category {
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
+.skill-card {
+    /* skill-card にはすでに .block-card が適用されている */
+    padding: 20px;
 }
 
-.skill-category h3 {
-    color: var(--color-accent);
+.skill-card h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.skill-period {
+    display: block;
+    color: var(--color-accent); /* 濃いグレーで期間を強調 */
+    font-size: 0.85rem;
+    font-weight: 700;
     margin-bottom: 10px;
-    font-size: 1.2rem;
 }
 
-.skill-category p {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.95rem;
+.skill-comment {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
 }
 
 .skills-note {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px; /* 上部に大きな余白 */
     font-size: 0.9rem;
     color: #666;
 }
-
 /* --------------------
     プロジェクト
    -------------------- */
