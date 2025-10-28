@@ -509,3 +509,100 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     /* min-height: 180px;  この行を削除またはコメントアウト */
     min-height: auto;
 }
+
+/* プロジェクトセクションの画像に対するサムネイルスタイル */
+.project-image-gallery img {
+    max-width: 100%;
+    /* 修正点: 縦幅を強制的に制限する */
+    max-height: 180px; /* 例として180pxに制限 */
+    width: auto; /* 幅はアスペクト比を維持して自動調整 */
+    object-fit: contain; /* 画像全体が表示されるように調整 */
+    
+    display: block; 
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer; /* クリック可能であることを示す */
+    
+    /* 複数の画像が横に並ぶように、最大幅を調整しても良い */
+    /* max-width: 30%; */ 
+}
+
+/* プレースホルダー用の min-height を解除/削除 */
+.project-image-gallery {
+    min-height: auto;
+}
+
+/* モーダルウィンドウのコンテナ全体 */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed;
+    z-index: 1000; /* 他の要素より手前に表示 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); /* 半透明の黒背景 */
+}
+
+/* 拡大表示される画像本体 */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    /* 垂直方向の中央配置 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 画像の説明文 (キャプション) */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* 閉じるボタン */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* モーダル表示時のアニメーション (オプション) */
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
