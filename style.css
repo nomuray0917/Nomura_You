@@ -593,3 +593,68 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     text-align: center;
     padding: 20px 0;
 }
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* SNSタイルを横に並べるグリッドレイアウト */
+.sns-grid {
+    display: grid;
+    /* 修正点: PCでは、最小幅180pxで自動的に列数を調整し、最大5列まで対応できるようにする */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px; /* タイル間のスペースを少し狭く調整 */
+    max-width: 1200px; /* 広い画面でも中央にまとめる */
+    margin: 0 auto 50px auto;
+}
+
+/* SNSタイルの共通スタイル（aタグに適用） */
+.sns-tile {
+    /* block-card がすでに適用されているため、追加の調整 */
+    text-decoration: none; /* リンクの下線を消す */
+    text-align: center;
+    padding: 25px 15px;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+}
+
+.sns-tile .icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--color-primary); /* デフォルトは黒 */
+}
+
+.sns-tile h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+}
+
+.sns-tile p {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+/* タイルにマウスオーバーしたときの効果 (統一感を出すため、共通のホバー効果を利用) */
+.sns-tile:hover {
+    background-color: var(--color-light-bg);
+}
+
+.vision-title {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.vision-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-secondary);
+    line-height: 1.8;
+}
