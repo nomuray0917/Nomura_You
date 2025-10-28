@@ -110,20 +110,19 @@ body {
 
 /* モバイル表示時のナビゲーションメニューのスタイル */
 .nav {
-    /* 修正点: メニューバーのみ黒背景にする（position: absoluteでヘッダーの下に） */
     position: absolute; 
-    top: 100%; /* ヘッダーのすぐ下に配置 */
+    top: 100%;
     left: 0;
     width: 100%;
     height: auto; 
-    max-height: 0; /* 最初は高さを0にして隠す */
+    max-height: 0; 
     
     background-color: var(--color-primary); /* 黒背景 */
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
     
-    transition: max-height 0.3s ease-out, opacity 0.3s ease; /* transitionを最適化 */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease;
     z-index: 90;
     padding: 0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -131,7 +130,8 @@ body {
 
 .nav ul {
     flex-direction: column; 
-    align-items: center; /* 修正点: メニューリンクを中央揃え */
+    /* 修正点: 縦積みなので align-items: center は継続 */
+    align-items: center; 
     width: 100%;
     padding: 10px 0;
     list-style: none;
@@ -139,13 +139,14 @@ body {
 
 .nav li {
     margin: 15px 0;
-    width: 80%;
-    text-align: center;
+    /* 修正点: リストアイテムの幅を広げ、次の行の text-align: center; を機能させる */
+    width: 100%; /* 幅を100%に広げる */ 
+    text-align: center; /* これで li 内のコンテンツが中央揃えされる */
     border-bottom: 1px solid var(--color-secondary);
 }
 
 .nav a {
-    color: var(--color-background); /* 白文字 */
+    color: var(--color-background);
     font-size: 1.2rem;
     padding: 10px 0;
     display: block;
