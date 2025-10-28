@@ -658,3 +658,24 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     color: var(--color-secondary);
     line-height: 1.8;
 }
+
+/* --------------------
+    プロジェクトセクションの「もっと見る」ボタン
+   -------------------- */
+.project-view-more {
+    text-align: center; /* ボタンを中央揃え */
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.more-button {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    /* ボタンの色をメインカラー（黒）に近い濃い色に設定 */
+    background-color: var(--color-secondary); 
+}
+
+.more-button:hover {
+    /* ホバーでアクセントカラー（グレー）に変化 */
+    background-color: var(--color-accent); 
+}

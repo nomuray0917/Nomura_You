@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 | Nomura's Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-logo">Nomura's HomePage</h1>
+
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skill</a></li>
+                    <li><a href="#projects">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="margin-top: 30px;">その他の作品とリンク集</h2>
+                
+                <p style="text-align: center; margin-bottom: 40px;">授業課題、個人制作、技術デモなどのリンクを掲載しています。</p>
+
+                <div class="project-grid-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    
+                    <div class="project-item block-card" style="margin-bottom: 0;">
+                        <h3>公大高専GPA計算機</h3>
+                        <p style="margin-bottom: 15px;">手計算でやるのはめんどくさいので，単位数と点数を入れていけばGPAを計算するプログラムを書いてみました．<br>Google Colabを使用しました．</br></p>
+                        <a href="https://colab.research.google.com/drive/1J0Cwu5QICuXvnCKlI-XalrwnUqdp_cJl?usp=sharing" target="_blank" class="link-button">計算機(Google Colab) &gt;</a>
+                    </div>
+
+                    <div class="project-item block-card" style="margin-bottom: 0;">
+                        <h3>クリープハイプ曲決め</h3>
+                        <p style="margin-bottom: 15px;">クリープハイプの聞く曲を提案してくれます．実用性はないです．<br>Google Colabを使用しました．</br></p>
+                        <a href="https://colab.research.google.com/drive/16MeF63phv9AfFV-BrGQwdseuuBntbSyM?usp=sharing" target="_blank" class="link-button">クリープ曲決め(Google Colab)&gt;</a>
+                    </div>
+
+                    <div class="project-item block-card" style="margin-bottom: 0;">
+                        <h3>今度あったら〇〇しよう</h3>
+                        <p style="margin-bottom: 15px;">クリープハイプの「HE IS MINE」の歌詞を変えるやつです．完全なおふざけです．<br>Google Colabを使用しました．</br></p>
+                        <a href="https://colab.research.google.com/drive/1FVRRBvKGRLfguiReikwW1_OiN_TvV0Vv?usp=sharing" target="_blank" class="link-button">今度あったら(Google Colab)&gt;</a>
+                    </div>
+                    </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 nomuray0917. All Rights Reserved. </p>
+        </div>
+    </footer>
+</body>
+</html>
