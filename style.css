@@ -486,3 +486,26 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     text-align: center;
     padding: 20px 0;
 }
+
+/* プロジェクトセクションの画像に対する基本的なスタイル */
+.project-image-gallery img {
+    /* 画像が親要素からはみ出さないように最大幅を設定 */
+    max-width: 100%; 
+    /* 画像の高さを自動調整 */
+    height: auto; 
+    /* ギャラリー内の各画像を小さなブロックとして表示 */
+    display: block; 
+    /* 角を丸くする */
+    border-radius: 4px;
+    /* ギャラリー内の余白 */
+    margin: 5px;
+    
+    /* 複数の画像が横に並ぶように、最大幅を調整しても良い */
+    /* max-width: 30%; */ 
+}
+
+/* 画像が入ったら、プレースホルダー用のmin-heightは不要になるので、CSSで削除できます */
+.project-image-gallery {
+    /* min-height: 180px;  この行を削除またはコメントアウト */
+    min-height: auto;
+}
