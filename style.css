@@ -76,6 +76,12 @@ body {
     z-index: 200; 
 }
 
+.site-logo a {
+    text-decoration: none;
+    color: inherit; /* 親要素（h1）の色を継承 */
+    font-family: inherit; /* 親要素（h1）のフォントを継承 */
+}
+
 /* ハンバーガーアイコンのスタイル */
 .menu-toggle {
     display: block; 
