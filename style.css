@@ -685,3 +685,58 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     /* ホバーでアクセントカラー（グレー）に変化 */
     background-color: var(--color-accent); 
 }
+
+/* --------------------
+    アバウト・ミー (経歴折りたたみ機能の土台)
+   -------------------- */
+.profile-section {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 30px; 
+}
+
+/* sub-title の定義 (太字と左線を確保) */
+.sub-title {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    border-left: 5px solid var(--color-accent);
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-weight: 700; /* ★太字を保証★ */
+}
+
+/* --------------------
+    経歴折りたたみ機能 (HISTORY SUMMARY) の調整
+   -------------------- */
+
+.profile-section details {
+    padding: 0;
+    margin: 0;
+}
+
+/* ★修正点: SUMMARYタグに sub-title のスタイルを適用し、表示崩れを防ぐ★ */
+.history-summary-fixed {
+    /* sub-title のスタイルを継承 */
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+    /* 矢印（マーカー）が左線と重なるのを防ぐための調整 */
+    padding-left: 15px; 
+}
+
+/* 矢印（マーカー）が正常に機能するようにスタイルをリセット */
+.profile-section summary {
+    list-style: revert; /* ブラウザ標準の矢印を再有効化 */
+    padding-left: 0; /* paddingをリセット */
+}
+
+/* Webkit系ブラウザの矢印パディングを調整 */
+.profile-section summary::-webkit-details-marker {
+    margin-right: 8px;
+}
+
+/* タイムラインの垂直線とコンテンツのスタイル */
+.history-timeline {
+    margin-top: 15px;
+    padding-left: 20px;
+}
