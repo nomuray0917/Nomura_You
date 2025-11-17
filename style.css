@@ -740,3 +740,21 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     margin-top: 15px;
     padding-left: 20px;
 }
+/* --------------------
+    プロジェクト内のボタン配置
+   -------------------- */
+.project-links-group {
+    display: flex;
+    gap: 10px; /* ボタン間のスペース */
+    margin-top: 20px;
+    /* モバイルでボタンが小さくなりすぎないよう、折り返しを許可 */
+    flex-wrap: wrap; 
+    justify-content: flex-start; /* 左寄せ */
+}
+
+.project-links-group .link-button {
+    /* ボタンの幅がコンテンツに合わせて伸縮するように調整 */
+    flex-grow: 0;
+    flex-shrink: 1;
+    white-space: nowrap; /* ボタンのテキストが途中で改行されないように */
+}
