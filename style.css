@@ -758,3 +758,121 @@ body.menu-open .menu-toggle .bar:nth-child(3) {
     flex-shrink: 1;
     white-space: nowrap; /* ボタンのテキストが途中で改行されないように */
 }
+
+
+
+
+
+.project-media-gallery img {
+    /* 修正点: 画像の最大幅を制限し、横に2枚並ぶように調整 */
+    max-width: 40%; 
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    box-sizing: border-box;
+    /* 画像を中央に配置するためのマージン調整 */
+    margin: 0; 
+}
+
+.project-media-gallery .project-audio-player {
+    /* 修正点: 音声プレーヤーの幅を制限し、縦に表示されるようにする */
+    width: 100%;
+    max-width: 300px; /* PCでの最大幅を制限 */
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    box-sizing: border-box;
+    /* Flexboxで配置されるように調整 */
+    align-self: flex-start; /* 上端に揃える */
+}
+
+/* 音声プレーヤー内の要素の調整 */
+.project-audio-player {
+    background-color: var(--color-light-bg);
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-audio-player audio {
+    width: 90%;
+    max-width: 300px;
+}
+
+/* --------------------
+    モバイル表示時の調整
+   -------------------- */
+@media (max-width: 767px) {
+    .project-media-gallery {
+        flex-direction: column; /* スマホでは縦積み */
+        align-items: center;
+    }
+    
+    .project-media-gallery img,
+    .project-media-gallery .project-audio-player {
+        max-width: 90%; /* スマホでは幅を広げる */
+        margin-bottom: 15px;
+    }
+}
+
+/* --------------------
+    プロジェクトの本文のテキスト表示を修正
+   -------------------- */
+
+.project-body p {
+    /* ★修正点1: 強制的に横書きを適用し、縦書きの競合を打ち消す★ */
+    writing-mode: horizontal-tb !important; 
+    text-orientation: mixed !important;
+    
+    /* 修正点2: 要素の押しつぶしを防ぐため、幅の折り返しを制御 */
+    word-break: normal !important;
+    white-space: normal !important;
+    
+    /* 通常のフォントと配置に戻す */
+    text-align: left; 
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--color-secondary);
+}
+
+/* ギャラリー要素自体にも縦書きの解除を適用し、安全性を高める */
+.project-item .project-image-gallery, 
+.project-item .project-body,
+.project-item .project-media-gallery {
+    writing-mode: horizontal-tb !important;
+    flex-direction: row !important; /* Flexboxの方向も強制的に横に */
+}
+
+/* --------------------
+    プロジェクト メディアギャラリー (画像2枚 + 音声1つ対応)
+   -------------------- */
+.project-media-gallery {
+    display: flex; /* Flexboxで画像を水平配置 */
+    gap: 15px;
+    margin-bottom: 25px;
+    
+    flex-wrap: wrap; 
+}
+
+.project-media-gallery img {
+    max-width: 45%; 
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    box-sizing: border-box;
+    margin: 0; 
+}
+
+.project-media-gallery .project-audio-player {
+    /* 音声プレーヤーのサイズを小さく固定 */
+    width: 100%;
+    max-width: 250px; 
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    box-sizing: border-box;
+    align-self: flex-start;
+}
