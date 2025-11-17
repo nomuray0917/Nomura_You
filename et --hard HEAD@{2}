@@ -1,0 +1,55 @@
+[33md23bcaa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: checkout: moving from main to main
+[33md23bcaa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: rebase (finish): returning to refs/heads/main
+[33md23bcaa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{2}: rebase (continue): update index.html and style.css
+[33m363607f[m HEAD@{3}: rebase (continue): update index.html
+[33m48ea6da[m HEAD@{4}: rebase (start): checkout 024800e8420feed81b40aac3f40fab0fab4576ff^
+[33mff24498[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{5}: commit: update index.html and style.css
+[33mb414392[m HEAD@{6}: commit: update index.html
+[33m024800e[m HEAD@{7}: commit: update index.html
+[33m48ea6da[m HEAD@{8}: commit: update index.html
+[33m1522eef[m HEAD@{9}: commit: update index.html and style.css
+[33mfcded3c[m HEAD@{10}: commit: update index.html and style.css
+[33m294f718[m HEAD@{11}: commit: update index.html
+[33mf68430c[m HEAD@{12}: commit: update index.html
+[33mecd8bee[m HEAD@{13}: commit: update index.html
+[33m433fb2a[m HEAD@{14}: commit: update gallery.html
+[33md17227c[m HEAD@{15}: commit: update gallery.html, index.html and style.css
+[33m69d5bd9[m HEAD@{16}: commit: update gallery.html and index.html
+[33mcb1e7eb[m HEAD@{17}: commit: update index.html
+[33mce5981f[m HEAD@{18}: commit: update index.html
+[33m7a7372c[m HEAD@{19}: commit: update gallery.html
+[33mbd7d79d[m HEAD@{20}: commit: update index.html and style.css
+[33mf464205[m HEAD@{21}: commit: update 1st_bonus.html, auth.html and index.html
+[33m1eba188[m HEAD@{22}: commit: update index.html and style.css
+[33m43b6ea3[m HEAD@{23}: commit: update index.html and style.css
+[33mbd0f1c5[m HEAD@{24}: commit: update index.html and style.css
+[33me30194f[m HEAD@{25}: commit: update index.html
+[33m3c32ad5[m HEAD@{26}: commit: update index.html
+[33m65c3f32[m HEAD@{27}: commit: update index.html and style.css
+[33me7ecdad[m HEAD@{28}: commit: dsfgg
+[33m180b4f4[m HEAD@{29}: commit: fergthyj
+[33meef2a97[m HEAD@{30}: commit: yggu
+[33m111eecd[m HEAD@{31}: commit: dfghjkl;
+[33made436a[m HEAD@{32}: commit: update index.html
+[33me18eb6a[m HEAD@{33}: commit: update index.html
+[33m53b5dbd[m HEAD@{34}: commit: update index.html
+[33m94154cb[m HEAD@{35}: commit: update index.html and style.css
+[33m5be37f9[m HEAD@{36}: commit: update index.html and style.css
+[33m68907f6[m HEAD@{37}: commit: update style.css
+[33m680d802[m HEAD@{38}: commit: update index.html
+[33m6f041b5[m HEAD@{39}: commit: update style.css
+[33mdac060c[m HEAD@{40}: commit: update style.css
+[33m9d5c374[m HEAD@{41}: commit: update style.css
+[33mb712f05[m HEAD@{42}: commit: update style.css
+[33m61bbefa[m HEAD@{43}: commit: update index.html and style.css
+[33m4d328a7[m HEAD@{44}: commit: gda
+[33m49d4b6c[m HEAD@{45}: commit: update style.css
+[33mfdbff10[m HEAD@{46}: commit: update index.html and style.css
+[33me1e5bdd[m HEAD@{47}: commit: update index.html and style.css
+[33m54258dc[m HEAD@{48}: commit: update index.html and style.css
+[33m989c2a7[m HEAD@{49}: commit: update index.html
+[33ma551a58[m HEAD@{50}: commit: update index.html and style.css
+[33mebe640e[m HEAD@{51}: commit: update index.html
+[33mcedd768[m HEAD@{52}: commit: update style.css
+[33mbcb59af[m HEAD@{53}: commit: update index.html
+[33me9a0a45[m HEAD@{54}: commit (initial): first commit
